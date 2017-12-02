@@ -27,4 +27,6 @@ yarn-error.log*
 !.vscode/snippets
 !.vscode/settings.json
 
+.idea
 .idea/*
+
