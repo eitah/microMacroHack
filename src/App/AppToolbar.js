@@ -117,12 +117,11 @@ class AppToolbar extends React.Component {
           <Section start>
             <TitleLink href="/">
               <Logo />
-              React Static
+              microMacro
             </TitleLink>
           </Section>
           <Section end>
-            <NavLink href="/getting-started">Get Started</NavLink>
-            <NavLinkLast href="/about">About</NavLinkLast>
+            <NavLinkLast href="/logout">Logout</NavLinkLast>
           </Section>
         </Row>
         {this.props.hero &&

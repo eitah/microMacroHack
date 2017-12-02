@@ -62,11 +62,11 @@ const routes = [
     }),
   },
   {
-    path: '/about',
+    path: '/logout',
     query: graphql`query routerAboutQuery { me { ...App_me } }`, // prettier-ignore
-    components: () => [import(/* webpackChunkName: 'about' */ './About')],
+    components: () => [import(/* webpackChunkName: 'about' */ './Logout')],
     render: ([About]) => ({
-      title: 'About Us',
+      title: 'Logout',
       body: <About />,
     }),
   },
