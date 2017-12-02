@@ -10,8 +10,8 @@ import styled from 'styled-components';
 import isEqual from 'lodash/isEqual';
 
 import AppToolbar from './AppToolbar';
-import AppFooter from './AppFooter';
 import ErrorPage from '../ErrorPage';
+import Home from '../Home';
 
 const Main = styled.div`
   max-width: 600px;
@@ -41,7 +41,7 @@ type State = {
 
 const defaults = {
   error: null,
-  title: 'React Static Boilerplate',
+  title: 'microMacro',
   description: '',
   hero: null,
   body: null,
@@ -111,8 +111,7 @@ class AppRenderer extends React.Component<any, Props, State> {
     ) : (
       <div>
         <AppToolbar me={null} hero={this.state.hero} />
-        <Main>{this.state.body || <p>Loading...</p>}</Main>
-        <AppFooter />
+        {this.state.body || <Home />}
       </div>
     );
   }

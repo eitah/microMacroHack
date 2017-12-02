@@ -12,8 +12,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className="homepage">
-        <h2>Welcome to microMacro</h2>
         <div id="login">
+          <h2>Welcome to microMacro</h2>
           <div className="button">Login</div>
         </div>
       </div>
