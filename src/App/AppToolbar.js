@@ -100,6 +100,7 @@ const NavLinkLast = styled(NavLink)`
   @media (max-width: 599px) {
     margin-right: 16px;
   }
+  cursor: pointer;
 `;
 
 class AppToolbar extends React.Component {
@@ -114,12 +115,12 @@ class AppToolbar extends React.Component {
         <Row>
           <Section start>
             <TitleLink href="/">
-              <img src={require('../microMACROLogoSmall.jpg')} className='logo' alt='logo' title='site logo' />
+              <img src={require('../microMACROLogoSmall.png')} className='logo' alt='logo' title='site logo' />
               microMacro
             </TitleLink>
           </Section>
           <Section end>
-            <NavLinkLast href="/logout">Logout</NavLinkLast>
+            <NavLinkLast id="logout">Logout</NavLinkLast>
           </Section>
         </Row>
         {this.props.hero &&

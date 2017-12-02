@@ -17,6 +17,7 @@ function showLogin() {
   // ensure that the user is logged out and no longer stored on the page
   helpers.logout()
   // show the login button
+  $('#logout').hide()
   $('#login').css('display', 'flex')
   // attach event handler to the login button
   $('#login .button').click(function() { helpers.redirectToFluxLogin() })
