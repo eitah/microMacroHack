@@ -25,6 +25,7 @@ const showLogin = () => {
  */
 const init = () => {
   // Check if we're coming back from Flux with the login credentials.
+  console.error('in the init method');
   helpers.storeFluxUser()
   // check that the user is logged in, otherwise show the login page
     .then(function() { return helpers.isLoggedIn() })

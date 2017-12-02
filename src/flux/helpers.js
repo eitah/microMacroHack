@@ -1,12 +1,12 @@
-import fluxConfig from './flux_config.js';
+import {fluxConfig} from './flux_config.js';
 
 // instantiate the Flux SDK with your appliation key
-// const sdk = new FluxSdk(fluxConfig.flux_client_id, {
-//   redirectUri: fluxConfig.url,
-//   fluxUrl: fluxConfig.flux_url,
-// });
+export const sdk = new FluxSdk(fluxConfig.flux_client_id, {
+  redirectUri: fluxConfig.url,
+  fluxUrl: fluxConfig.flux_url
+});
 
-// const helpers = new FluxHelpers(sdk);
+export const helpers = new FluxHelpers(sdk);
 
-export const sdk = () => {}
-export const helpers = () => {}
+// export const sdk = () => {}
+// export const helpers = () => {}

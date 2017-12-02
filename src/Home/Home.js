@@ -12,8 +12,8 @@ import init from "../flux/index.js";
 
 class Home extends React.Component {
 
-  componentDidMount(){
-    {init}
+  ComponentDidMount(){
+    window.onload = {init}
   }
   
   render() {
