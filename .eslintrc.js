@@ -7,14 +7,14 @@
 
 module.exports = {
   extends: ['eslint-config-react-app', 'prettier'],
-  plugins: ['flowtype', 'prettier'],
+  plugins: ['flowtype'],
   rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        trailingComma: 'all',
-      },
-    ],
+    // 'prettier/prettier': [
+    //   'error',
+    //   {
+    //     singleQuote: true,
+    //     trailingComma: 'all',
+    //   },
+    // ],
   },
 };
