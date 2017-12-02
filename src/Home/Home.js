@@ -8,13 +8,8 @@
 import React from 'react';
 import './index.css';
 import PhotoUpload from "../PhotoUpload/PhotoUpload";
-import init from "../flux/index.js";
 
 class Home extends React.Component {
-
-  componentDidMount(){
-    {init}
-  }
   
   render() {
     return (

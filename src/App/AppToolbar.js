@@ -10,7 +10,6 @@ import styled from 'styled-components';
 import { graphql, createFragmentContainer } from 'react-relay';
 
 import Link from '../Link';
-import AppLogo from './AppLogo';
 import type { AppToolbar_me } from './__generated__/AppToolbar_me.graphql';
 
 const Header = styled.header`
@@ -20,7 +19,7 @@ const Header = styled.header`
   box-sizing: border-box;
   color: #fff;
   flex-direction: column;
-  background-color: darkslategray;
+  background-color: #0E293C;
   justify-content: space-between;
 `;
 
@@ -78,12 +77,11 @@ const TitleLink = styled(Link)`
   &.title:visited {
     color: #00d8ff;
   }
-`;
 
-const Logo = styled(AppLogo)`
-  width: 48px;
-  height: 48px;
-  margin-right: 16px;
+  & img {
+    width: 90px;
+    margin-right: 10px;
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -102,6 +100,7 @@ const NavLinkLast = styled(NavLink)`
   @media (max-width: 599px) {
     margin-right: 16px;
   }
+  cursor: pointer;
 `;
 
 class AppToolbar extends React.Component {
@@ -116,12 +115,12 @@ class AppToolbar extends React.Component {
         <Row>
           <Section start>
             <TitleLink href="/">
-              <Logo />
+              <img src={require('../microMACROLogoSmall.png')} className='logo' alt='logo' title='site logo' />
               microMacro
             </TitleLink>
           </Section>
           <Section end>
-            <NavLinkLast href="/logout">Logout</NavLinkLast>
+            <NavLinkLast id="logout">Logout</NavLinkLast>
           </Section>
         </Row>
         {this.props.hero &&
