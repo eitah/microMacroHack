@@ -10,7 +10,7 @@ import './index.css';
 import PhotoUpload from "../PhotoUpload/PhotoUpload";
 
 class Home extends React.Component {
-  
+
   render() {
     return (
       <div className="homepage">
@@ -18,7 +18,7 @@ class Home extends React.Component {
           <h2>MicroMACRO Photo Upload App</h2>
           <div className="button">Login</div>
         </div>
-        <div className='photoupload'>
+        <div>
           <PhotoUpload />
         </div>
       </div>
