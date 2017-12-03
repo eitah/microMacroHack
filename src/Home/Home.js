@@ -21,8 +21,8 @@ class Home extends React.Component {
   }
 
   onDrop = (picture) => {
-    if (picture && picture.length > 0) {
-      const lastImageInArray = picture.length-1;
+    if (picture && picture[picture.length-1]) {
+      const lastImageInArray = picture[picture.length-1];
       this.setState({
         picture: lastImageInArray,
       });
