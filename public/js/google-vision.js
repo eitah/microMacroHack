@@ -55,14 +55,24 @@ function getNow() {
 
 function parseResult(result) {
   let googleData = result.responses[0] && result.responses[0].labelAnnotations;
-  // filter out scores < 25% and retain only the category descriptions.
-  let resultArray =  googleData.filter(img => img.score > 0.25).map(img => img.description);
-  // console.error(resultArray);
-  displayResult(googleData, resultArray);
-  return resultArray;
+  displayResult(googleData);
+  let parsedGoogleData =  googleData.filter(img => img.score > 0.7).map(img => img.description);
+  sendToFlux(parsedGoogleData);
+  return parsedGoogleData;
 }
 
-function displayResult(googleData, resultArray) {
+function sendToFlux(categories) {
+  let finalData = {
+    categories,
+    latitude: '1.0',
+    longitude: '1.0'
+  };
+  // console.error('HERES THE DATA WERE SENDING TO FLUX', JSON.stringify(finalData));
+  updateCellValue({ id: 'aKjJnmmVX80bqm6We'}, { id: '40a18e6507b8b186af90a9f3832cdad6'}, finalData)
+}
+
+
+function displayResult(googleData) {
   let rawData = googleData.map(img => {
     return { score: (img.score).toFixed(4), description: img.description }
   });
