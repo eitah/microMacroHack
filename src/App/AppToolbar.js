@@ -120,7 +120,7 @@ class AppToolbar extends React.Component {
             </TitleLink>
           </Section>
           <Section end>
-            <NavLinkLast id="logout">Logout</NavLinkLast>
+            <NavLinkLast href="/" id="logout">Logout</NavLinkLast>
           </Section>
         </Row>
         {this.props.hero &&
