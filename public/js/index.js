@@ -6,6 +6,7 @@ var viewport, projects, selectedProject, projectCells, selectedOutputCell
 function hideLogin() {
   // hide the login button
   $('#login').hide()
+  $('#photoupload').css('display', 'flex')
   // attach the event handler to the logout button
   $('#logout').click(showLogin)
 }
@@ -18,6 +19,7 @@ function showLogin() {
   helpers.logout()
   // show the login button
   $('#logout').hide()
+  $('#photoupload').hide()
   $('#login').css('display', 'flex')
   // attach event handler to the login button
   $('#login .button').click(function() { helpers.redirectToFluxLogin() })
@@ -41,7 +43,6 @@ function init() {
       if (isLoggedIn) {
         // if logged in, make sure the login page is hidden
         hideLogin()
-        // Show PhotoUpload
         // run code to get lat/long data
         // PhotoUpload with then
         // inside the then, updateCellValue('aKjJnmmVX80bqm6We', '40a18e6507b8b186af90a9f3832cdad6', 'value')
