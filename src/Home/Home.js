@@ -11,6 +11,7 @@ import PhotoUpload from "../PhotoUpload/PhotoUpload";
 import GoogleVision from '../GoogleVision';
 
 class Home extends React.Component {
+
   constructor(props) {
     super(props);
     this.onDrop = this.onDrop.bind(this);
@@ -35,6 +36,8 @@ class Home extends React.Component {
           <h2>MicroMACRO Photo Upload App</h2>
           <div className="button">Login</div>
         </div>
+        <div id='photoSection'>
+          <PhotoUpload />
         <div>
           <PhotoUpload onDrop={this.onDrop} />
         </div>

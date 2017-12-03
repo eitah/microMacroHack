@@ -19,7 +19,7 @@ const Header = styled.header`
   box-sizing: border-box;
   color: #fff;
   flex-direction: column;
-  background-color: #0E293C;
+  background-color: #3f4257;
   justify-content: space-between;
 `;
 

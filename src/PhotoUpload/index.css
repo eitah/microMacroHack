@@ -1,5 +1,8 @@
-  #photoupload {
-  height: 100%;
+.photo-upload {
+  text-align: center;
+}
+
+#photoupload {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -7,21 +10,21 @@
   justify-content: center;
   -webkit-box-align: center;
   -webkit-box-pack: center;
-  background: #e8e8e8;
   z-index: 10000;
 }
 
 #photoupload .fileBrowser {
   font-size: 1em;
-  padding: 1.5em;
+  padding: 1em;
   border-radius: 10px;
-  background: #dd4b39;
-  opacity: 0.8;
+  background: #00d8ff;
+  opacity: 1;
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
   box-shadow: 0 1px 8px 1px #bbb;
   transition: opacity 0.2s ease-in-out;
+  margin-left: 10px;
 }
 
 #photoupload .fileBrowser:hover {
