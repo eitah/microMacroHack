@@ -6,7 +6,7 @@ var viewport, projects, selectedProject, projectCells, selectedOutputCell
 function hideLogin() {
   // hide the login button
   $('#login').hide()
-  $('#photoupload').css('display', 'flex')
+  $('#photoSection').css('display', 'flex')
   // attach the event handler to the logout button
   $('#logout').click(showLogin)
 }
@@ -19,7 +19,7 @@ function showLogin() {
   helpers.logout()
   // show the login button
   $('#logout').hide()
-  $('#photoupload').hide()
+  $('#photoSection').hide()
   $('#login').css('display', 'flex')
   // attach event handler to the login button
   $('#login .button').click(function() { helpers.redirectToFluxLogin() })

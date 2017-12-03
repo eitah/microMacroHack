@@ -1,6 +1,15 @@
 .homepage {
   text-align: center;
   height: calc(100vh - 64px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  background: #e8e8e8;
+  z-index: 10000;
 }
 
 #login {
@@ -31,4 +40,12 @@
 
 #login .button:hover {
   opacity: 1;
+}
+
+#photoSection {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
