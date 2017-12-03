@@ -1,9 +1,12 @@
+let picture
+
 $(function(){
-  console.error('we are the best programmers ever');
   document.addEventListener('analyzePicture', function (e) {
-    console.log('we are the best programmers ever');
+    // const picture = e.detail && e.detail.picture;
     function start() {
       // 2. Initialize the JavaScript client library.
+      let pic = $('.uploadPicture')[0].src;
+      let base64encodedPic = pic.split(',')[1];
       gapi.client.init({
         'apiKey': 'AIzaSyDcY33nVnhMi4lXS9edGulipdf1FLSMoxg',
         // clientId and scope are optional if auth is not required.
@@ -11,7 +14,6 @@ $(function(){
 //        'scope': 'profile',
       }).then(function() {
         // 3. Initialize and make the API request.
-        console.log('request issuing')
         return gapi.client.request({
 //          'path': 'https://people.googleapis.com/v1/people/me?requestMask.includeField=person.names',
           'path': 'https://vision.googleapis.com/v1/images:annotate',
@@ -25,16 +27,15 @@ $(function(){
                   }
                 ],
                 "image": {
-                  "source": {
-                    "imageUri": "gs://micro-macro-hack/20171202_114603.jpg"
-                  }
+                  "content": base64encodedPic
                 }
               }
             ]
           }
         })
       }).then(function(response) {
-        console.log(response.result);
+        // console.log(response.result);
+        return parseResult(response.result);
 
       }, function(reason) {
         console.log('Error: ' + reason.result.error.message);
@@ -44,3 +45,37 @@ $(function(){
     gapi.load('client', start);
   }, false);
 })
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+function getNow() {
+  const today = new Date();
+  return `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+}
+
+
+function parseResult(result) {
+  let googleData = result.responses[0] && result.responses[0].labelAnnotations;
+  // filter out scores < 25% and retain only the category descriptions.
+  let resultArray =  googleData.filter(img => img.score > 0.25).map(img => img.description);
+  // console.error(resultArray);
+  displayResult(googleData, resultArray);
+  return resultArray;
+}
+
+function displayResult(googleData, resultArray) {
+  let rawData = googleData.map(img => {
+    return { score: (img.score).toFixed(4), description: img.description }
+  });
+  $('#visionStatus').text('...filtering...');
+  $('#visionData').text(JSON.stringify(rawData));
+  sleep(4000).then(()=>{
+    $('#visionStatus').text('...building ouput...');
+    let prettyData = rawData.filter(img => img.score > 0.7);
+    $('#visionData').text(JSON.stringify(prettyData));
+  })
+  sleep(7000).then(()=>{
+    $('#visionStatus').text('...sending data to Flux...');
+    let reallyPretty = rawData.map(img => img.description);
+    $('#visionData').text(JSON.stringify(reallyPretty));
+  })
+}
