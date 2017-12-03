@@ -25,10 +25,6 @@ class Home extends React.Component {
       this.setState({
         picture: picture[0],
       });
-      EXIF.getData("<file type='image/jpeg'>", function(){
-        console.log(this)
-        console.log(EXIF.getAllTags(this))
-      })
     }
   };
 
