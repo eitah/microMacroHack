@@ -27,7 +27,7 @@
 
 #login .button {
   font-size: 3em;
-  padding: 1.5em;
+  padding: 1em;
   border-radius: 10px;
   background: #0fbfd6;
   opacity: 0.8;
@@ -36,6 +36,7 @@
   cursor: pointer;
   box-shadow: 0 1px 8px 1px #bbb;
   transition: opacity 0.2s ease-in-out;
+  margin-top: 40px;
 }
 
 #login .button:hover {
