@@ -13,6 +13,12 @@
   z-index: 10000;
 }
 
+#welcome{
+  font-size: -webkit-xxx-large;
+  color: #0fbfd6;
+  font-weight: 200;
+}
+
 #photoupload .fileBrowser {
   font-size: 1em;
   padding: 1em;

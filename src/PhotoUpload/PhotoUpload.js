@@ -14,6 +14,8 @@ class PhotoUpload extends React.Component {
   render() {
     return (
       <div>
+        <div id="welcome">Welcome!</div>
+        <div>Please input your image below.</div>
         <ImageUploader
           withIcon={true}
           buttonText='Choose images'

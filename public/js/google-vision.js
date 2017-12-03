@@ -56,7 +56,7 @@ function getNow() {
 function parseResult(result) {
   let googleData = result.responses[0] && result.responses[0].labelAnnotations;
   displayResult(googleData);
-  let parsedGoogleData =  googleData.filter(img => img.score > 0.7).map(img => img.description);
+  let parsedGoogleData =  googleData.filter(img => img.score > 0.5).map(img => img.description);
   sendToFlux(parsedGoogleData);
   return parsedGoogleData;
 }
@@ -70,19 +70,20 @@ function sendToFlux(categories) {
 
 
 function displayResult(googleData) {
-  let rawData = googleData.map(img => {
+  let rawData, prettyData, reallyPretty;
+  rawData = googleData.map(img => {
     return { score: (img.score).toFixed(4), description: img.description }
   });
   $('#visionStatus').text('...filtering...');
   $('#visionData').text(JSON.stringify(rawData));
   sleep(4000).then(()=>{
     $('#visionStatus').text('...building ouput...');
-    let prettyData = rawData.filter(img => img.score > 0.7);
+    prettyData = rawData.filter(img => img.score > 0.5);
     $('#visionData').text(JSON.stringify(prettyData));
   })
-  sleep(7000).then(()=>{
+  sleep(4000).then(()=>{
     $('#visionStatus').text('...sending data to Flux...');
-    let reallyPretty = rawData.map(img => img.description);
+    reallyPretty = prettyData.map(img => img.description);
     $('#visionData').text(JSON.stringify(reallyPretty));
   })
 }
