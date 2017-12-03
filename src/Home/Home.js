@@ -8,8 +8,25 @@
 import React from 'react';
 import './index.css';
 import PhotoUpload from "../PhotoUpload/PhotoUpload";
+import GoogleVision from '../GoogleVision';
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onDrop = this.onDrop.bind(this);
+    this.state = {
+      picture: null,
+    }
+  }
+
+  onDrop = (picture) => {
+    if (picture && picture[0]) {
+      this.setState({
+        picture: picture[0],
+      });
+    }
+  };
+
 
   render() {
     return (
@@ -19,7 +36,10 @@ class Home extends React.Component {
           <div className="button">Login</div>
         </div>
         <div>
-          <PhotoUpload />
+          <PhotoUpload onDrop={this.onDrop} />
+        </div>
+        <div>
+          <GoogleVision picture={this.state.picture} />
         </div>
       </div>
     );
