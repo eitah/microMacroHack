@@ -14,11 +14,6 @@ class PhotoUpload extends React.Component {
   render() {
     return (
       <div>
-        <p className='photo-upload'>Please select your file below</p>
-        <div id='photoupload'>
-          <input className="input" />
-          <div className="fileBrowser" onClick={this.uploadImage}>Select a file</div>
-        </div>
         <ImageUploader
           withIcon={true}
           buttonText='Choose images'
