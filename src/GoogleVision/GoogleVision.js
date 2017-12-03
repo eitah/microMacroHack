@@ -4,12 +4,6 @@
  */
 import React from 'react';
 
-/* @flow */
-let dataDiv = null;
-
-// import gapi from 'google-client-api';
-
-
 class GoogleVision extends React.Component {
   componentWillUpdate = (nextProps) => {
     if (nextProps && nextProps.picture) {
