@@ -31,21 +31,18 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="homepage">
-        <div id="login">
-          <h2>MicroMACRO Photo Upload App</h2>
-          <div className="button">Login</div>
-        </div>
-        <div id='photoSection'>
-          <PhotoUpload />
-        <div>
-          <PhotoUpload onDrop={this.onDrop} />
-        </div>
-        <div>
-          <GoogleVision picture={this.state.picture} />
-        </div>
+    <div className="homepage">
+      <div id="login">
+        <h2>MicroMACRO Photo Upload App</h2>
+        <div className="button">Login</div>
       </div>
-    );
+      <div id='photoSection'>
+        <PhotoUpload onDrop={this.onDrop} />
+      </div>
+      <div>
+        <GoogleVision picture={this.state.picture} />
+    </div>
+    </div>);
   }
 }
 

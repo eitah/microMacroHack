@@ -17,11 +17,11 @@ class GoogleVision extends React.Component {
       var readyEvent = new Event('analyzePicture');
 
       debugger;
-      document.dispatchEvent(readyEvent, {details: { picture: nextProps.picture} });
+      document.dispatchEvent(readyEvent, { details: { picture: nextProps.picture } });
 
     }
 
-  }
+  };
 
 
   render() {
@@ -29,10 +29,9 @@ class GoogleVision extends React.Component {
 
     return (
       <div>
-      <span>{wording}</span>
-          <div ref={(div) => { dataDiv = div; }} id="vision" />
-        </div>
-        );
+        <span>{wording}</span>
+      </div>
+    );
   }
 }
 
