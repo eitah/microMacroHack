@@ -23,8 +23,6 @@ class GoogleVision extends React.Component {
         else
           console.log(exifData); // Do something with your data!
       });
-      debugger;
-
     }
   };
 
