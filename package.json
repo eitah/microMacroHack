@@ -58,5 +58,6 @@
     "test": "node ./setup && react-scripts test --env=jsdom",
     "deploy": "node ./setup && react-scripts build && gh-pages -d build",
     "start": "node ./setup && react-scripts start"
-  }
+  },
+  "homepage": "http://eitah.github.io/micro-macro-app"
 }

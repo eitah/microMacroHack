@@ -8,7 +8,7 @@ $(function(){
       let pic = $('.uploadPicture')[0].src;
       let base64encodedPic = pic.split(',')[1];
       gapi.client.init({
-        'apiKey': 'AIzaSyDcY33nVnhMi4lXS9edGulipdf1FLSMoxg',
+        'apiKey': 'AIzaSyB5pYEJ_Goht46AH6i6Wc9j1OHzS0VIu5I',
         // clientId and scope are optional if auth is not required.
 //        'clientId': 'YOUR_WEB_CLIENT_ID.apps.googleusercontent.com',
 //        'scope': 'profile',
