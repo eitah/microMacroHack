@@ -65,7 +65,7 @@ function sendToFlux(categories) {
   let finalData = {
     categories, latitude: '41.895912', longitude: '-87.651993' };
   // console.error('HERES THE DATA WERE SENDING TO FLUX', JSON.stringify(finalData));
-  updateCellValue({ id: 'aKjJnmmVX80bqm6We'}, { id: 'TestData'}, finalData)
+  updateCellValue({ id: 'aKjJnmmVX80bqm6We'}, { id: '40a18e6507b8b186af90a9f3832cdad6'}, finalData)
 }
 
 
